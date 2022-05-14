@@ -1,0 +1,19 @@
+.goback {
+    margin-top: 40px !important;
+    text-decoration: none !important;
+    text-transform: capitalize !important;
+}
+
+.single-product-image {
+    height: 30rem !important;
+    width: 39rem !important;
+    padding: 20px 0px !important
+}
+
+@media (max-width: 992px) {
+    .single-product-image {
+        height: 17rem !important;
+        width: 23rem !important;
+        padding: 20px 0px !important;
+    }
+}
