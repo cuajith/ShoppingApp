@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 import ProductDetails from './screens/ProductDetails';
 import { BrowserRouter } from 'react-router-dom';
 import CartScreen from './screens/CartScreen';
+import LoginScreen from './screens/LoginScreen';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route exact path='/' element={<HomeScreen />} />
             <Route exact path='/product/:id' element={<ProductDetails />} />
             <Route exact path='/cart/:id' element={<CartScreen />} />
+            <Route exact path='/signin' element={<LoginScreen />} />
           </Routes>
         </Container>
       </main>
