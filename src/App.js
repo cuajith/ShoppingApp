@@ -9,6 +9,8 @@ import ProductDetails from './screens/ProductDetails';
 import { BrowserRouter } from 'react-router-dom';
 import CartScreen from './screens/CartScreen';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route exact path='/product/:id' element={<ProductDetails />} />
             <Route exact path='/cart/:id' element={<CartScreen />} />
             <Route exact path='/signin' element={<LoginScreen />} />
+            <Route exact path='/register' element={<RegisterScreen/>} />
+            <Route exact path='/profile' element={<ProfileScreen />} /> 
           </Routes>
         </Container>
       </main>

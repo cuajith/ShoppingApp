@@ -10,6 +10,6 @@ router.post('/',userController.registerUser);
 router.post('/login',userController.authController);
 
 // User profile
-router.route("/profile").get(protect,userController.getUserProfile);
+router.route("/profile").get(protect,userController.getUserProfile).put(protect,userController.updateUserDetails);
 
 module.exports = router;
