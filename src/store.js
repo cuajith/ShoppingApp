@@ -5,12 +5,17 @@ import { applyMiddleware } from "redux";
 import { productListReducer } from "./reducers/productReducer";
 import { productDetailsReducer } from "./reducers/productReducer";
 import { cartReducer } from "./reducers/cartReducer";
+import { orderCreateReducer } from "./reducers/orderReducer";
 import {
   userLoginReducer,
   userRegisterReducer,
   userDetailsReducer,
   userUpdateProfileReducer,
 } from "./reducers/userReducers";
+
+const shippingAddressFromStorage = localStorage.getItem("shippingAddress")
+  ? JSON.parse(localStorage.getItem("shippingAddress"))
+  : {};
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
@@ -28,10 +33,11 @@ const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
+  orderCreate: orderCreateReducer
 });
 
 const initialState = {
-  cart: { cartItems: cartItemsFromStorage },
+  cart: { cartItems: cartItemsFromStorage, shippingAddress: shippingAddressFromStorage },
   userLogin: { userInfo: userInfoFromStorage },
 };
 const middleWare = [thunk];
